@@ -18,11 +18,11 @@ app.set('view engine', 'ejs');
 
 let MySQLStore = require('express-mysql-session')(session);
 var options = {
-    host: 'mysql742.umbler.com',
-    port: '41890', /* USAR O MESMO USUÁRIO DO BANCO DE DADOS PRINCIPAL */
-    user: 'majulovers',       /* A SESSÃO CRIARÁ UMA TABELA AUTOMATICAMENTE PARA OS IDS DA SESSÃO*/
-    password: '/6OUXeg8?L.+',
-    database: 'majulovers',
+    host: '',
+    port: '', /* USAR O MESMO USUÁRIO DO BANCO DE DADOS PRINCIPAL */
+    user: '',       /* A SESSÃO CRIARÁ UMA TABELA AUTOMATICAMENTE PARA OS IDS DA SESSÃO*/
+    password: '',
+    database: '',
     schema: {
         tableName: 'custom_session_table_name',
         columnNames: {

@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const pool = mysql.createPool({
-    host     : 'mysql742.umbler.com',
-    port     : '41890',
-    user     : 'majulovers',
-    password : '/6OUXeg8?L.+',
-    database : 'majulovers'
+    host     : '',
+    port     : '',
+    user     : '',
+    password : '',
+    database : ''
 });
 
 pool.on('connection', function (connection) {
