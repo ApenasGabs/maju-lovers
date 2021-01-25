@@ -1,0 +1,95 @@
+<%- include('./partials/head.ejs') %>
+<script>
+    window.onload = () => {
+        let spinner = document.getElementById('spinner');
+        spinner.style.display = "none";
+
+        let card = document.getElementById('card-message');
+        card.style.display = "flex"
+    }
+</script>
+<body>
+    <%- include('./partials/navbar.ejs', {auth: auth}) %>
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border text-ml" role="status" id="spinner">
+            <span class="sr-only"></span>
+          </div>
+    </div>
+
+        <% if(messages != null) { %> 
+
+            <% if(auth == true){ %> 
+
+            
+        <div class="container main-container">
+            <% messages.forEach(RowDataPacket => { %>
+            <% let data = RowDataPacket.sentAt %> 
+            <% data = data.replace(/-/gi, '/') %> 
+            <% data = data.replace(/:/gi, 'h') %> 
+                <div class="card card-message" id="card-message">
+                    <div class="card-body">
+                        <h5><%= RowDataPacket.message %> </h5>
+                    </div>
+                    <div class="card-footer">
+                        <h6 id="data"><%= data %> </h6>
+
+                        <div class="approbation">
+
+                           <a href="https://twitter.com/lovers_maju/status/<%= RowDataPacket.idStr %> ">
+                                <img src="/static/img/twitter-icon.png" alt="" srcset="">
+                        </a> 
+
+                            <form action="/home/delete/<%=RowDataPacket.idMessage%>" method="post">
+                                <input type="submit" class="btn btn-danger btn-delete-home" id="" value="">
+                            </form>
+    
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
+        <% }) %>
+        
+        <% } else { %> 
+
+            <div class="container main-container">
+                <% messages.forEach(RowDataPacket => { %>
+                <% let data = RowDataPacket.sentAt %> 
+                <% data = data.replace(/-/gi, '/') %> 
+                <% data = data.replace(/:/gi, 'h') %> 
+                    <div class="card card-message" id="card-message">
+                        <div class="card-body">
+                            <h5><%= RowDataPacket.message %> </h5>
+                        </div>
+                        <div class="card-footer">
+                            <h6 id="data"><%= data %> </h6>
+    
+                            <div class="approbation">
+    
+                               <a href="https://twitter.com/lovers_maju/status/<%= RowDataPacket.idStr %>">
+                                    <img src="/static/img/twitter-icon.png" alt="" srcset="">
+                            </a> 
+                               
+                            </div>
+                            
+                        </div>
+    
+                    </div>
+
+                <% }) %>
+
+            <% } %> 
+
+
+    <% } else {%>
+        <div class="empty">
+            <h1 id="empty">Nenhuma mensagem recebida :(</h1>        
+            <h5><a href="/enviar">envie uma mensagem</a></h5>
+        </div>
+       
+        <% }%> 
+    </div>
+
+</body>
+</html>

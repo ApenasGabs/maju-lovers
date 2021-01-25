@@ -1,0 +1,46 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/navbar.ejs', {auth: auth}) %>
+
+    <div class="container">
+        <div class="tip">
+            <h1 id="welcome">Seja bem vindo ao Maju Lovers</h1>
+            <h1 id="tip">Envie uma mensagem para o seu crush por aqui!</h1>
+        </div>
+
+        <% if(callback != null){ %> 
+
+            <% if(callback.includes('Digita')){ %> 
+
+            <div class="tip alert-tip">
+                <div class="alert alert-danger alert-send" role="alert">
+                    <%= callback %> 
+                </div>
+            </div>
+            <% } else {%>
+                <div class="tip alert-tip">
+                    <div class="alert alert-success alert-send" role="alert">
+                        <%= callback %> 
+                    </div>
+                </div>
+                <% } %> 
+
+        <% } %> 
+        
+    
+    <div class="msgform">
+        <form action="/enviar" method="post">
+            <textarea name="msg" class="center-block msg-txtarea" id="msg"  placeholder="Digite a sua mensagem..." maxlength="279"></textarea>
+            <input type="submit" class="btn btn-primary ml-btn" style="margin: 0; margin-top: 10px;" value="Enviar">
+        </form>
+    </div>
+
+    <div class="tip">
+        <h6 id="finaltip">Depois de enviar sua mensagem, aguarde que a mesma seja aprovada. <br> Fique de olho em nosso <a href="https://twitter.com/lovers_maju">Twitter</a>! <br> Boa sorte com os @s :)</h6>
+    </div>
+    
+
+
+</div>
+</body>
+</html>

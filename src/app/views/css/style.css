@@ -1,0 +1,386 @@
+
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body{
+    background-image: url('/static/img/bg1.png');
+}
+
+@font-face{
+    src: url('/static/font/sailec-bold.ttf');
+    font-family: Sailec-Bold;
+}
+.ml-auto{
+    margin-left: auto;
+}
+
+#navbarNav{
+    margin-left: auto;
+}
+
+@font-face{
+    src: url('/static/font/magic-clause.ttf');
+    font-family: Magic-Clause;
+}
+
+.alert-send{
+    margin-top: 50px;
+    margin-bottom: -50px; 
+}
+
+#login-title{
+    font-family: Sailec-Bold;
+    font-size: 32px;
+    text-align: center;
+}
+
+.creationAlert{
+    width: 100vw;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.alert-createUser{
+    width: 75vw;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.alert-changePass{
+    width: 75vw;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+#changepass{
+    text-align: center;
+    margin-bottom: 35px;
+}
+.l1{
+    margin-top: 10px !important;
+}
+
+.login-div{
+    width: 100vw;
+    max-width: 600px;
+    height: 100vh;
+    max-height: 160px;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+
+.signup-div{
+    width: 100vw;
+    max-width: 600px;
+    height: 100vh;
+    max-height: 205px;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+.ml-btn{
+    background-color: #eb97c9;
+    border: 2px solid #ff3f9985;
+    color: #000;
+    margin-left: 12.5%;
+}
+.ml-btn:hover{
+    background-color: #ff3f9985;
+    border: 2px solid #ff3f9985;
+}
+
+.alert-tip{
+    height: auto;
+}
+.login-div input[type="email"], input[type="password"], input[type="text"]{
+    width: 75vw;
+    max-width: 450px;
+    height: 75vh;
+    max-height: 45px;
+    border: 3px solid #ff3f9985;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.signup-div input[type="email"], input[type="password"], input[type="text"]{
+    width: 75vw;
+    max-width: 450px;
+    height: 75vh;
+    max-height: 45px;
+    border: 3px solid #ff3f9985;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
+    outline: none;
+}
+
+.center-block{
+    margin: auto;
+    display: block;
+}
+
+#welcome{
+    text-align: center;
+    font-family: Magic-Clause;
+    font-size: 4rem;
+    user-select: none;
+}
+
+#tip{
+    text-align: center;
+    font-family: Magic-Clause;
+    font-size: 2rem;
+    user-select: none;
+
+}
+.nav-item{
+    font-family: Sailec-Bold;
+    font-size: 1rem;
+}
+
+.shadow-lg{
+    box-shadow: 0rem 0.2rem 0rem #ff3f9985 !important;
+}
+
+.msgform{
+    width: 75vw;
+    max-width: 600px;
+    height: 75vw;
+    max-height: 400px;
+    margin-top: 50px;
+    margin: 0 auto;
+    margin-top: 7vh
+}
+
+.msg-txtarea::placeholder{
+    color: rgb(99, 68, 89);
+    opacity: 0.3;
+}
+
+.msg-txtarea{
+    resize: none;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.767);
+    border-radius: 8px;
+    border: 3px solid #ff3f9985;
+    width: 100%;
+    height: 57vw;
+    max-height: 350px;
+}
+
+#finaltip{
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    text-align: center;
+    font-family: Magic-Clause;
+    font-size: 1.4rem;
+}
+
+#finaltip a{
+    text-decoration: none;
+    color: #f86df1;
+}
+
+.tip{
+    width: 80vw;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.navbar-toggler{
+    border: 0px solid transparent;
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.navbar-toggler:focus{
+    border: 0px solid transparent;
+    box-shadow: 0px 0px 0px 0px transparent;
+}
+
+.navbar-toggler:hover{
+    border: 0px solid transparent;
+    outline: none;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 3.3fr 3.3fr 3.3fr;
+    row-gap: 25px;
+    column-gap: 25px
+
+}
+
+.card{
+    animation: card-animation 1.0s ease-in-out 0.5s 1 normal forwards;
+    opacity: 0%;
+}
+
+.card-message{
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 350px;
+    border: 2px solid #ff3f9985;
+    display: flex;
+}
+
+.card-message .card-body h5{
+    white-space: pre-line;
+}
+
+.card-footer{
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 6fr 4fr;
+    background-color: #ff3f9985;
+}
+.card-footer img{
+    float: right;
+}
+.card-footer a{
+    width: 22px;
+    height: 22px;
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: 10px;
+    margin-left: 18px;
+}
+.approbation{
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+.btn-approve{
+    width: 40px;
+    background-image: url('/static/img/hand-thumbs-up.svg');
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: center;
+    margin-right: 5px;
+}
+
+#data{
+    margin-top: 9px;
+}
+
+#pending-msgs{
+    margin-bottom: 50px;
+    margin-top: -20px;
+    font-family: Sailec-Bold;
+    font-size: 1.5rem;
+}
+
+.approbation img{
+    margin-top: -6px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn-delete{
+    width: 40px;
+    background-image: url('/static/img/hand-thumbs-down.svg');
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: center;
+}
+
+.btn-delete-home{
+    width: 30px;
+    height: 30px;
+    background-image: url('/static/img/x.svg');
+    margin-left: 15px;
+    margin-top: 4px;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+
+}
+.spinner-border{
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 35px;
+}
+.text-ml{
+    color: #ff3f9985 !important;
+}
+#empty{
+    margin-top: 10vh;
+    text-align: center;
+    font-family: Magic-Clause;
+    font-size: 4rem;
+}
+
+.empty h5{
+    text-align: center;
+    font-family: Magic-Clause;
+    font-size: 2rem;
+    letter-spacing: 4.5px;
+}
+.empty a{
+    text-decoration: none;
+    color: #000;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    html{
+        font-size: 18px;
+    }
+    .main-container{
+        display: grid;
+        grid-template-columns: 5fr 5fr;
+        row-gap: 25px;
+        column-gap: 25px
+    
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    
+    html{
+        font-size: 15px;
+    }
+
+    body{
+        background-size: 100%
+    }
+    
+    
+    .main-container{
+        display: grid;
+        grid-template-columns: 10fr;
+        row-gap: 25px;
+        column-gap: 25px;
+        justify-content: center;
+        justify-items: center;
+    }
+
+}
+
+@keyframes card-animation {
+
+    0%{
+        opacity: 0%;
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(-0px);
+        opacity: 100%;
+    }
+}

@@ -1,0 +1,70 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/navbar.ejs', {auth: auth}) %>
+
+
+    <script>
+        window.onload = () => {
+            let spinner = document.getElementById('spinner');
+            spinner.style.display = "none";
+        }
+    </script>
+
+    
+        <% if(messages != null){ %> 
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-ml" role="status" id="spinner">
+                    <span class="sr-only"></span>
+                  </div>
+            </div>
+
+            <div class="container">
+                <h3 id="pending-msgs">Mensagens com aprovação pendente</h3>
+            </div>
+        
+        <div class="container main-container" >
+            <% messages.forEach(RowDataPacket => { %>
+            <% let data = RowDataPacket.date %> 
+            <% data = data.replace(/-/gi, '/') %> 
+                <div id="card-message" class="card card-message">
+                    <div class="card-body">
+                        <h5><%= RowDataPacket.message %> </h5>
+                    </div>
+                    <div class="card-footer">
+                        <h6 id="data"><%= data %> </h6>
+    
+                        <div class="approbation">
+    
+                            <form action="/approve/<%=RowDataPacket.idMessage%>" method="post">
+                                <input type="submit" class="btn btn-success btn-approve" id="" value="">
+                            </form>
+    
+                            <form action="/delete/<%= RowDataPacket.idMessage%>" method="post">
+                                <input type="submit" class="btn btn-danger btn-delete" id="" value="">
+                            </form>
+                        </div>
+                        
+                    </div>
+    
+                </div>
+            <% }) %> 
+        <% } else {%> 
+            <div class="container">
+               
+                <div class="empty">
+                    <h1 id="empty">Nenhuma mensagem pendente :(</h1>        
+                    <h5>aguarde novas mensagens!</h5>
+                </div>
+            </div>
+           
+           
+            <% } %> 
+        </div>
+
+    
+    
+   
+</body>
+
+</html>

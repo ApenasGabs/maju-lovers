@@ -1,0 +1,40 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/navbar.ejs', {auth: auth}) %>
+
+    <div class="container">
+        <h1 id="login-title">Se você é um administrador, faça seu login aqui :)</h1>
+    
+
+        <% if(callback != null) {%> 
+            <div class="creationAlert">
+                <div class="alert alert-danger alert-createUser" role="alert">
+                    <%=callback%>
+                </div>
+            </div>
+
+            <div class="login-div l1">
+                <form action="/login" method="post">
+                <input class="center-block" type="email" name="email" id="email" placeholder="E-mail">
+                <input class="center-block" type="password" name="password" id="password" placeholder="Senha">
+                <input type="submit" value="Entrar" class="btn btn-primary ml-btn">
+                </form>
+            </div>
+        
+        <% } else { %> 
+
+        <div class="login-div">
+            <form action="/login" method="post">
+            <input class="center-block" type="email" name="email" id="email" placeholder="E-mail">
+            <input class="center-block" type="password" name="password" id="password" placeholder="Senha">
+            <input type="submit" value="Entrar" class="btn btn-primary ml-btn">
+            </form>
+        </div>
+
+        <% } %> 
+    </div>
+   
+</body>
+
+</html>
